@@ -9,9 +9,6 @@ const $ = require ('jquery');
 class ToDo extends React.Component{
     constructor(props) {
         super(props);
-
-        this.state = {
-        };
         this.fetchData = this.fetchData.bind(this);
     };
 
@@ -71,9 +68,7 @@ class ToDo extends React.Component{
                 <div className="todo-footer">
                     <strong><span className="count-todos">{this.props.undoneItems.length}</span></strong> Items Left
                 </div>
-
             </div>
-
         )
     }
 };

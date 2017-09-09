@@ -17,9 +17,6 @@ Array.prototype.removeValue = function(name, value) {
 class Done extends  React.Component{
     constructor(props) {
         super(props);
-
-        this.state = {
-        };
         this.fetchData = this.fetchData.bind(this);
     };
     fetchData(){
