@@ -1,3 +1,9 @@
 language: node_js
+sudo: false
 node_js:
-  - "6.11.1"
+  - '4'
+  - '6'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-react-webpack' ]; then cd .. && eval "mv $currentfolder generator-react-webpack" && cd generator-react-webpack; fi
+after_success: 'npm run coverage'
