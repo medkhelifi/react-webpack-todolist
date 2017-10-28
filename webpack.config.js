@@ -1,62 +1,56 @@
-var path = require("path");
-var webpack = require("webpack");
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: './index.html',
-    filename: 'index.html',
-    inject: 'body'
-});
+const {resolve} = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: ["./src/main.jsx", './src/sass/main.scss']
-    },
+    context: resolve(__dirname, 'src'),
+    entry: [
+        './main.jsx'
+        // the entry point of our app
+    ],
     output: {
-        path: path.resolve(__dirname, "public"),
+        path:resolve(__dirname, "public"),
         publicPath: "/public/",
         filename: "bundle.js"
     },
+    devtool: 'source-map',
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                use: ['babel-loader',],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+                        use: [
+                            {
+                                loader: "css-loader" // translates CSS into CommonJS
+                            },
+                            {
+                                loader: "sass-loader" // compiles Sass to CSS
+                            }
+                        ],
+                        fallback: "style-loader" // used when css not extracted
+                    }
+                ))
+            },
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                use: 'url-loader'
+            },
+        ]
+    },
     plugins: [
+        new webpack.NamedModulesPlugin(),
+        // prints more readable module names in the browser console on HMR updates
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default'],
         }),
-        HtmlWebpackPluginConfig
+        new ExtractTextPlugin({filename: 'main.css', allChunks: true})
     ],
-    module: {
-        rules: [{
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader"
-            }, {
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader",
-            }
-            ]
-            },
-            {
-                test: /\.jsx$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                    }
-                ]
-            }],
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                include: /src/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
-    },
 };

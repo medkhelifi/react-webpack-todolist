@@ -1,6 +1,5 @@
 'use strict';
 import 'jquery';
-import 'bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -8,6 +7,10 @@ import ToDo from './jsx/todo.jsx';
 import Done from './jsx/done.jsx';
 
 import listItems from './db/db.json';
+
+import './sass/main.scss';
+import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
 /**
  * Access to DB and get all TodoList
  * @param listItems
