@@ -51,6 +51,6 @@ module.exports = {
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default'],
         }),
-        new ExtractTextPlugin({filename: 'main.css', allChunks: true})
+        new ExtractTextPlugin({filename: 'bundle.css', allChunks: true})
     ],
 };

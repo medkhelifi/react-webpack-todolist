@@ -31,7 +31,6 @@ export default class Main extends React.Component{
 
     }
     fetchData(){
-        console.log("IM CALLED");
         this.state.undoneItems = this.getItemsQuery(false);
         this.state.doneItems = this.getItemsQuery(true);
         this.setState({
