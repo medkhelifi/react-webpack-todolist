@@ -35,7 +35,7 @@ class Done extends  React.Component{
         this.props.doneItems.forEach(function(entry){
             lis.push(
                 <li key={entry.id}>
-                    {entry.description}
+                    {entry.title}
                     <button onClick={this.deleteItem.bind(this, entry.id)} className='remove-item btn btn-default btn-xs pull-right'><span className="glyphicon glyphicon-remove"></span></button>
                 </li>
             );

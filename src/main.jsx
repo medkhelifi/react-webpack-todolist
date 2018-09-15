@@ -1,8 +1,11 @@
 'use strict';
 import 'jquery';
+import 'webpack-jquery-ui';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { restdb, realtimeURL, Helper } from './jsx/helper.jsx';
 import ToDo from './jsx/todo.jsx';
 import Done from './jsx/done.jsx';
 
@@ -31,6 +34,28 @@ export default class Main extends React.Component{
 
     }
     fetchData(){
+        restdb.get("/rest/todo")
+            .then(res => {
+                let now = new Date().getTime();
+                let tickers = res.data;
+                let diff = null;
+
+                // tag stocks that are changed in the last 10 secs
+                _.each(tickers, (t) => {
+                    diff = (now - new Date(t._changed).getTime()) / 1000;
+                    if (diff < 10) {
+                        t.isChanged = true;
+                    } else {
+                        t.isChanged = false;
+                    }
+                });
+
+                this.setState(previousState => {
+                    console.log ("data:"+ tickers );
+                });
+            });
+
+
         this.state.undoneItems = this.getItemsQuery(false);
         this.state.doneItems = this.getItemsQuery(true);
         this.setState({

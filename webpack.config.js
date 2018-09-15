@@ -40,6 +40,10 @@ module.exports = {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
                 use: 'url-loader'
             },
+            {
+                test: /\.css$/,
+                loaders: ["style-loader","css-loader"]
+            }
         ]
     },
     plugins: [

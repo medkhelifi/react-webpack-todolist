@@ -11,5 +11,7 @@ $ webpack
 ## Build
 `
 $ npm install
-$ npm build
-`
+$ npm run-script build
+
+## Start
+`$ npm run-script start
