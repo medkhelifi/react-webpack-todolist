@@ -1,17 +1,23 @@
 [
   {
     "id": "6r2ctr8luv",
-    "description": "Email team for updates",
+    "title": "Email team for updates",
+    "description": "I have to email all our team about the next features updates",
+    "dueDate": "2018.09.16 10:00",
     "done": false
   },
   {
     "id": "41pk80gp52",
-    "description": "Send out meeting request",
+    "title": "Send out meeting request",
+    "description": "Send an invitation for Monday's meeting to Mohamed, Yacef and Amina.",
+    "dueDate": "2018.09.18 10:00",
     "done": false
   },
   {
     "id": "4y46j3mgwg",
-    "description": "Response to client emails",
+    "title": "Response to client emails",
+    "description": "I have 13 client emails to response, UNACCEPTABLE",
+    "dueDate": "2018.09.19 17:00",
     "done": true
   }
 ]
