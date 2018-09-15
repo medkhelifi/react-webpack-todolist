@@ -17,7 +17,7 @@ $ npm run-script build
 `$ npm run-script start
 
 ## Documentation
-I started fiw moths ago a [tutorial on Medium website](https://medium.com/@medkhelifi/creating-a-react-webpack-todo-list-app-bae32ca95f46) to explain step by step how to create a WebPack React Todolist
+I started fiew moths ago a [tutorial on Medium website](https://medium.com/@medkhelifi/creating-a-react-webpack-todo-list-app-bae32ca95f46) to explain step by step how to create a WebPack React Todolist.
 The tutorial is not finished yet ...
 
 
