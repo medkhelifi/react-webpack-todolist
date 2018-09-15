@@ -6,7 +6,7 @@
 import axios from 'axios';
 
 // CORS enabled apikey
-const apikey = 'fb890a16ba3099083fa3b4824c2cb34ec39c8';
+const apikey = '5b9d02986e310a4351fdc0a9';
 
 // Autotrade delay
 const trade_delay = 10000; // millis
