@@ -24,6 +24,6 @@ The tutorial is not finished yet ...
 ## Next Step
 As you can see actually the webApp have no access to real database so the next steps are:
 
-- Persist data into a real database storage, (I started configuration with a tool called [restdb.io](https://restdb.io/) tool for creation online noSql databases).
+- Persist data into a real database storage, (I started configuration with a tool called [restdb.io](https://restdb.io/) for creation online noSql databases).
 - Add Email based authentication.
 - Add all optional features

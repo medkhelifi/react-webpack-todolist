@@ -34,6 +34,8 @@ export default class Main extends React.Component{
 
     }
     fetchData(){
+        /*
+        @Todo this snippet will be used with the https://restdb.io implementation (medKHELIFI)
         restdb.get("/rest/todo")
             .then(res => {
                 let now = new Date().getTime();
@@ -54,7 +56,7 @@ export default class Main extends React.Component{
                     console.log ("data:"+ tickers );
                 });
             });
-
+        */
 
         this.state.undoneItems = this.getItemsQuery(false);
         this.state.doneItems = this.getItemsQuery(true);
