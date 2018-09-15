@@ -53,6 +53,8 @@ class ToDo extends React.Component{
             this.props.fetchData();
             this.refs.todoInput.value= "";
             this.refs.descriptionInput.value= "";
+        }else{
+
         }
 
     }
@@ -93,6 +95,7 @@ class ToDo extends React.Component{
             <div>
                 <div className="col-md-6">
                     <input type="text" className="form-control add-todo" ref="todoInput" placeholder="Todo Title" onKeyPress={this.handleKeyPress.bind(this)}/>
+                    <span style={{fontSize: 10+'px', fontStyle: 'italic'}} ref="titleErrorMsg">Item title is required</span>
                 </div>
                 <div className="col-md-6">
                     <DatePicker
